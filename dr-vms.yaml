@@ -1,0 +1,143 @@
+Resources:
+  DC-HZC-APP01:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.6"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-HZC-APP01
+
+
+  DC-HZC-APP02:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.7"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-HZC-APP02
+
+
+  DC-I2A-AP01:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.8"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-I2A-AP01
+
+
+  DC-I2A-AP02:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.9"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-I2A-AP02
+
+
+  DC-RGS-APP01:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.10"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-RGS-APP01
+
+
+  DC-RGS-APP02:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-bb9a6bc2"
+      KeyName: "rhel7.4"
+      InstanceType: "m5n.2xlarge"
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "false"
+          DeviceIndex: "0"
+          PrivateIpAddress: "10.13.206.11"
+          GroupSet:
+            - !Ref LottBeSecurityGroup
+          SubnetId: !ImportValue "lott-be-subnet-id"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeType: "gp2"
+            DeleteOnTermination: "true"
+            VolumeSize: "40"
+      Tags:
+        - Key: Name
+          Value: DC-RGS-APP02
